@@ -88,7 +88,7 @@ async function getWeather(city) {
    
     const key = '94615ea0e53712c2f2bb5bea884fe288'
 
-    const response = await fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&id=524901&appid=${key}&units=metric`)
+    const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&id=524901&appid=${key}&units=metric`)
 
     const json = await response.json()
 
@@ -106,7 +106,7 @@ async function getWeather(city) {
     let lat = json.city.coord.lat
     let lon = json.city.coord.lon
 
-    let uvFetch = await fetch(`http://api.openweathermap.org/data/2.5/uvi/forecast?lat=${lat}&lon=${lon}&appid=${keyUV}`)
+    let uvFetch = await fetch(`https://api.openweathermap.org/data/2.5/uvi/forecast?lat=${lat}&lon=${lon}&appid=${keyUV}`)
     
     let responseUV = await uvFetch.json()
 
